@@ -63,7 +63,7 @@ class UsbSpy:
             if copied == 0:
                 copy_tree(fromDirectory, folder_location)
                 copied = 1
-                self.lbl_UseMsg['text'] = "Hurray ! Files Copied Succefully.\nPress REFRESH and hide to copy from other USB"
+                self.lbl_UseMsg['text'] = "Hurray ! Files Copied Succefully.\nYou can open folder."
                 self.btn_OpenFolder.grid(row=2, column=0, columnspan=3)
         elif copied == 1:
             self.lbl_UseMsg['text'] = "Hurray ! Files Copied Succefully.\nYou can open folder."
