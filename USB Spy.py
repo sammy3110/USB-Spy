@@ -25,14 +25,15 @@ class UsbSpy:
         self.root['bg'] = "white"
         self.myHotKey = 'ctrl+alt+h'
         self.key = 'H'
+        script_dir = os.path.dirname(os.path.abspath(__file__))
         #..........IMAGE VARIABLES...................
-        self.img_Spy = PhotoImage(file = r"C:\Users\manik\Desktop\USB Spy\Images\Final Spy.png")
-        self.img_RedDot = PhotoImage(file = r"C:\Users\manik\Desktop\USB Spy\Images\RedDot.png")
-        self.img_GreenDot = PhotoImage(file = r"C:\Users\manik\Desktop\USB Spy\Images\GreenDot.png")
-        self.img_Browse = PhotoImage(file = r"C:\Users\manik\Desktop\USB Spy\Images\Browse.png")
-        self.img_Hide = PhotoImage(file = r"C:\Users\manik\Desktop\USB Spy\Images\Hide.png")
-        self.img_OpenFolder = PhotoImage(file = r"C:\Users\manik\Desktop\USB Spy\Images\OpenFolder.png")
-        self.root.iconbitmap(r"C:\Users\manik\Desktop\USB Spy\Images\USB_icon.ico")
+        self.img_Spy = PhotoImage(file = script_dir + r"\Images\Final Spy.png")
+        self.img_RedDot = PhotoImage(file = script_dir + r"\Images\RedDot.png")
+        self.img_GreenDot = PhotoImage(file = script_dir + r"\Images\GreenDot.png")
+        self.img_Browse = PhotoImage(file = script_dir + r"\Images\Browse.png")
+        self.img_Hide = PhotoImage(file = script_dir + r"\Images\Hide.png")
+        self.img_OpenFolder = PhotoImage(file = script_dir + r"\Images\OpenFolder.png")
+        self.root.iconbitmap(script_dir + r"\Images\USB_icon.ico")
 
         self.createMainWindow()
         keyboard.add_hotkey(self.myHotKey, self.toogleHideShow)
@@ -65,7 +66,7 @@ class UsbSpy:
                 self.lbl_UseMsg['text'] = "Hurray ! Files Copied Succefully.\nPress REFRESH and hide to copy from other USB"
                 self.btn_OpenFolder.grid(row=2, column=0, columnspan=3)
         elif copied == 1:
-            self.lbl_UseMsg['text'] = "Hurray ! Files Copied Succefully.\nPress REFRESH and hide to copy from other USB"
+            self.lbl_UseMsg['text'] = "Hurray ! Files Copied Succefully.\nYou can open folder."
         else:
             self.lbl_conn_dot['image'] = self.img_RedDot
             self.lbl_conn_msg['text'] = "USB not connected :("
@@ -107,7 +108,8 @@ class UsbSpy:
 
     def openFolder(self):
         global folder_location
-        os.open(folder_location)
+        path = os.path.realpath(folder_location)
+        os.startfile(path)
 
     def on_enter(self, event):
         if len(folder_location) > 35:
