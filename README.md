@@ -31,7 +31,7 @@ Here is some directions with the images. Please have a look how the tool works :
 ![Select Store Path](/Images/Select_Path.jpg)
 
 3) Use shortcut to toogle Hide/Show the main window.
-![Select Shorcut](/Images/Select_Shortcut)
+![Select Shorcut](/Images/Select_Shortcut.jpg)
 
 4) Hide the window and wait for USB to be inserted. When you hide a window a pop-up warning message will be displayed showing you to remember the shortcut to re-display the main window.
 ![Hide Pop-up](/Images/Hide_Popup.jpg)
@@ -43,3 +43,7 @@ Here is some directions with the images. Please have a look how the tool works :
 ![Open Destination](/Images/Open_Destination.jpg)
 
 # Congrates ! You Spied USB Files to your PC :wink:
+
+Thank You !
+Stay Safe !
+Peace !
